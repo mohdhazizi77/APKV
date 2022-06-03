@@ -37,7 +37,7 @@
 
             <div class="col-sm-3 col-xl-3 col-lg-3">
                 <div class="card o-hidden border-0">
-                    <a href="{{ route('system-configuration-index') }}">
+                    <a href="{{ route('config-city') }}">
                         <div class="bg-secondary b-r-4 card-body">
                             <div class="media static-top-widget">
                                 <div class="align-self-center text-center">

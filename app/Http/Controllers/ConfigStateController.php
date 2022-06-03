@@ -14,4 +14,9 @@ class ConfigStateController extends Controller
         return view('admin.module-system-configuration.config-state',
         compact('dataState'));
     }
+
+    public function create()
+    {
+        return view('admin.module-system-configuration.config-state-create');
+    }
 }
