@@ -10,4 +10,10 @@ class ConfigState extends Model
     use HasFactory;
 
     protected $table = "config_state";
+
+    protected $fillable = [
+        'parameter',
+        'description',
+        'index'
+    ];
 }

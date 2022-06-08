@@ -18,8 +18,8 @@ class CreateConfigEthnicityTable extends Migration
             $table->string('parameter');
             $table->string('description', '500')->nullable();
             $table->integer('index')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+            $table->timestamps();
+
         });
     }
 

@@ -15,7 +15,7 @@
             <h3>Student Registration</h3>
         @endslot
         <li class="breadcrumb-item"><a href="{{route('registration-index')}}"> Index</a></li>
-        <li class="breadcrumb-item"><a href="{{route('student-registration')}}">Student</a></li>
+        <li class="breadcrumb-item"><a href="#">Student</a></li>
     @endcomponent
 
     <div class="container-fluid">

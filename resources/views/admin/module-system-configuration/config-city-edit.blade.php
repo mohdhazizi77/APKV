@@ -13,11 +13,11 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('breadcrumb_title')
-            <h3>City Configuration</h3>
+            <h3>State Configuration</h3>
         @endslot
         <li class="breadcrumb-item"><a href="{{ route('system-configuration-index') }}"> Index</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('config-city.index') }}"> City</a></li>
-        <li class="breadcrumb-item"><a href="#"> Create City</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('config-city.index') }}"> State</a></li>
+        <li class="breadcrumb-item"><a href="#"> Update State</a></li>
     @endcomponent
 
     <div class="container-fluid">
@@ -26,20 +26,24 @@
 
                 <div class="card">
 
-                    <form class="form theme-form" method="POST" action="{{ route('config-city.store') }}">
+                    <form class="form theme-form" action="{{ route('config-city.update', $selectedCity) }}" method="POST">
 
                         @csrf
-
+                        @method('PUT')
+                        <input type="hidden" name="id" value="{{ $selectedCity->id }}">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
+
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">State</label>
                                         <div class="col-sm-9">
                                             <select class="form-select" name="config_state_fk">
                                                 <option>--Select--</option>
                                                 @foreach ($listState as $state)
-                                                    <option value="{{ $state->id }}">{{ $state->parameter }}</option>
+                                                    <option value="{{ $state->id }}"
+                                                        {{ $state->id == $selectedCity->config_state_fk ? 'selected' : '' }}>
+                                                        {{ $state->parameter }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -48,20 +52,23 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Parameter</label>
                                         <div class="col-sm-9">
-                                            <input name="parameter" class="form-control" type="text" />
+                                            <input name="parameter" class="form-control" type="text"
+                                                value="{{ $selectedCity->parameter }}" />
                                         </div>
                                     </div>
+
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Index</label>
                                         <div class="col-sm-9">
-                                            <input name="index" class="form-control digits" type="number" />
+                                            <input name="index" class="form-control digits" type="number"
+                                                value="{{ $selectedCity->index }}" />
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <label class="col-sm-3 col-form-label">Description</label>
                                         <div class="col-sm-9">
-                                            <textarea name="description" class="form-control" rows="3" cols="5"></textarea>
+                                            <textarea name="description" class="form-control" rows="3" cols="5">{{ $selectedCity->description }}</textarea>
                                         </div>
                                     </div>
 

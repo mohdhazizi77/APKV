@@ -10,7 +10,7 @@
         @slot('breadcrumb_title')
             <h3>System Configuration</h3>
         @endslot
-        <li class="breadcrumb-item"><a href="{{ route('system-configuration-index') }}"> Index</a></li>
+        <li class="breadcrumb-item"><a href="#"> Index</a></li>
     @endcomponent
 
     <div class="container-fluid">
@@ -19,7 +19,7 @@
 
             <div class="col-sm-3 col-xl-3 col-lg-3">
                 <div class="card o-hidden border-0">
-                    <a href="{{ route('config-state') }}">
+                    <a href="{{ route('config-state.index') }}">
                         <div class="bg-secondary b-r-4 card-body">
                             <div class="media static-top-widget">
                                 <div class="align-self-center text-center">
@@ -37,7 +37,7 @@
 
             <div class="col-sm-3 col-xl-3 col-lg-3">
                 <div class="card o-hidden border-0">
-                    <a href="{{ route('config-city') }}">
+                    <a href="{{ route('config-city.index') }}">
                         <div class="bg-secondary b-r-4 card-body">
                             <div class="media static-top-widget">
                                 <div class="align-self-center text-center">

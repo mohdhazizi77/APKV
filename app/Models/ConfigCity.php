@@ -11,5 +11,5 @@ class ConfigCity extends Model
 
     protected $table = "config_city";
 
-    protected $fillable = ['parameter', 'description', 'index'];
+    protected $fillable = ['config_state_fk', 'parameter', 'description', 'index'];
 }

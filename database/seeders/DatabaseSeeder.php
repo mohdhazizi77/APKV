@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ConfigCityTableSeeder::class);
         $this->call(ConfigReligionTableSeeder::class);
         $this->call(ConfigEthnicityTableSeeder::class);
+        $this->call(StudentsTableSeeder::class);
     }
 }

@@ -27,17 +27,17 @@ class StudentRegistrationController extends Controller
             compact('listCity', 'listEthnicity', 'listReligion', 'listState'));
     }
 
-    public function getCity($parameter)
+    public function getCity($stateID)
     {
         try {
-            $data = ConfigPostcode::select('config_city_fk')
-                ->where('parameter', $parameter)
+            $listCity = DB::table('config_city')
+                ->where('config_state_fk', $stateID)
                 ->first();
 
             http_response_code(200);
             return response([
                 'message' => 'Data successfully retrieved.',
-                'data' => $data
+                'data' => $listCity
             ]);
 
         } catch (RequestException $r) {

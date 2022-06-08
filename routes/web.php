@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-@include_once('admin_web.php');
+include 'admin_web.php';
 
 Route::get('/', function () {
     return redirect()->route('index');
@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::prefix('/apkv')->group(function () {
     Route::view('/', 'admin.module-dashboard.dashboard')->name('index');
 });
+
+
